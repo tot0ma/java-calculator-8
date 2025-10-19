@@ -1,11 +1,10 @@
 package calculator;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class NumberParser {
-    private final List<Delimiter> defaultDelimiters = List.of(new Delimiter(","), new Delimiter(";"));
+    private final List<Delimiter> defaultDelimiters = List.of(new Delimiter(","), new Delimiter(":"));
     private final ArrayList<Short> numbers;
 
     public NumberParser(String target, Delimiter customDelimiter) {
@@ -15,7 +14,6 @@ public class NumberParser {
 
     private ArrayList<Short> parse(String target, String regex) {
         ArrayList<Short> result = new ArrayList<>();
-        System.out.println(Arrays.toString(target.split(regex)));
         for (String s: target.split(regex)) {
             result.add(Short.valueOf(s));
         }
