@@ -12,8 +12,9 @@ public class Application {
         System.out.println(extractor.getDelimiter());
         NumberParser numberParser = new NumberParser(extractor.getRemaining(), extractor.getDelimiter());
         List<Short> numbers = numberParser.getNumbers();
+        Adder adder = new Adder(numbers);
         System.out.println(numbers);
-        Integer result = 0;
+        Integer result = adder.getResult();
         System.out.printf("결과: %s", result);
     }
 }
