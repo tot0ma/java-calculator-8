@@ -1,15 +1,20 @@
-package calculator;
+package calculator.model;
 
 import java.util.List;
 
 public class Adder {
     private final Integer result;
 
-    public Adder(List<Short> numbers) {
-        this.result = add(numbers);
+    public Adder(Integer result) {
+        this.result = result;
     }
 
-    private Integer add(List<Short> numbers) {
+    public static Adder from(List<Short> numbers) {
+        Integer result = add(numbers);
+        return new Adder(result);
+    }
+
+    private static Integer add(List<Short> numbers) {
         Integer result = 0;
         for (Short n : numbers) {
             result += n;
